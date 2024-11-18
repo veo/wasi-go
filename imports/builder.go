@@ -178,6 +178,8 @@ func (b *Builder) WithSocketsExtension(name string, module wazero.CompiledModule
 		b.socketsExtension = &wasi_snapshot_preview1.WasmEdgeV1
 	case "wasmedgev2":
 		b.socketsExtension = &wasi_snapshot_preview1.WasmEdgeV2
+	case "wasix":
+		b.socketsExtension = &wasi_snapshot_preview1.Wasix
 	case "path_open":
 		b.socketsExtension = nil
 		b.pathOpenSockets = true
